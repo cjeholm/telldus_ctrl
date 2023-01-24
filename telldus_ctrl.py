@@ -70,8 +70,8 @@ def main():
     # ret= client1.publish("house/bulb1","on")                   # publish
 
     client1.on_message = on_message                          #assign function to callback
-    client1.connect(BROKER, PORT)                                 #establish connection
-    client1.subscribe(TOPIC)
+    client1.connect(config.BROKER, config.PORT)                                 #establish connection
+    client1.subscribe(config.TOPIC)
 
     print(str("Telldus MQTT Control listening to {}:{}:{} API: {}").format(config.BROKER, config.PORT, config.TOPIC, config.API))
 
